@@ -83,6 +83,82 @@ public class DoublyLinkedList {
 			throw new RuntimeException("Empty list");
 		return tail.data;
 	}
-	
+
+	public int removeFirst() {
+		if (isEmpty())
+			throw new RuntimeException("Empty list");
+		int data = head.data;
+		head = head.next;
+		head.prev = null;
+		--size;
+		if (isEmpty())
+			tail = null;
+		return data;
+	}
+
+	public int removeLast() {
+		if (isEmpty())
+			throw new RuntimeException("Empty list");
+		int data = tail.data;
+		tail = tail.prev;
+		tail.next = null;
+		--size;
+		return data;
+	}
+
+	// private Node remove(Node node) {return new Node();}
+	public void removeAt(int index) {
+
+		if (index < 0 || index > size)
+			throw new IllegalArgumentException();
+		int i = 0;
+		Node n;
+		if (index < size / 2) {
+			n = head;
+			while (i != index) {
+				n = n.next;
+				i++;
+			}
+		} else {
+			n = tail;
+			while (i != index) {
+				n = n.prev;
+				i--;
+			}
+		}
+
+		remove(n);
+
+	}
+
+	private int remove(Node n) {
+		if (n.prev == null)
+			return removeFirst();
+		if (n.next == null)
+			return removeLast();
+
+		n.next.prev = n.prev;
+		n.prev.next = n.next;
+
+		int data = n.data;
+		n.prev = n.next = n = null;
+		--size;
+		return data;
+	}
+
+	public int index(Object o) {
+		int index = 0;
+		Node n = head;
+		if (o != null) {
+			while (n != null) {
+				o.equals(n.data);
+				n = n.next;
+				index++;
+			}
+			return index;
+		}
+		return -1;
+
+	}
 
 }

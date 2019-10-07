@@ -11,6 +11,7 @@ public class DoublyLinkedListRunner {
 		System.out.println(list.isEmpty());
 		list.insert(2);
 		list.insert(8);
+		System.out.println(list.peekFirst());
 		list.insertAtStart(9);
 		list.insertAtStart(11);
 		list.show();
@@ -21,7 +22,7 @@ public class DoublyLinkedListRunner {
 		System.out.println(list.isEmpty());
 		System.out.println(list.size());
 		
-		System.out.println(list.peekFirst());
+		
 		
 	}
 	

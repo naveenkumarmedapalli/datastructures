@@ -15,6 +15,20 @@ public class LinkedListRunner {
 		
 		list.insertAt(2, 1);
 		list.show();
+		
+		
+		java.util.LinkedList<Integer> l = new java.util.LinkedList<>();
+		l.add(6);
+		l.add(2);
+		l.add(8);
+		l.add(3);
+		l.add(1);
+		l.add(5);
+		
+		System.out.println(l);
+		
+		l.remove(0);
+		System.out.println(l);
 	 
 	}
 }
