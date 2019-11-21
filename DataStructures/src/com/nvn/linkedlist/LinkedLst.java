@@ -24,7 +24,7 @@ public class LinkedLst {
 
 class _Node {
 	Object data;
-	_Node next;
+	_Node next; 
 }
 
 class _LinkedList {
