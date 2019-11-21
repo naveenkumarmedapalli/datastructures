@@ -7,12 +7,12 @@ package com.nvn.linkedlist;
 
 public class LinkedList {
 
-	Node head;
+	_Node head;
 	int size;
 
 	public void insert(int data) {
 
-		Node node = new Node();
+		_Node node = new _Node();
 
 		node.data = data;
 		node.next = null;
@@ -20,7 +20,7 @@ public class LinkedList {
 		if (head == null) {
 			head = node;
 		} else {
-			Node n = head;
+			_Node n = head;
 			while (n.next != null) {
 				n = n.next;
 			}
@@ -31,7 +31,7 @@ public class LinkedList {
 
 	public void show() {
 
-		Node n = head;
+		_Node n = head;
 
 		while (n.next != null) {
 			System.out.println(n.data);
@@ -43,7 +43,7 @@ public class LinkedList {
 
 	public void insertAtStart(int data) {
 
-		Node node = new Node();
+		_Node node = new _Node();
 		node.data = data;
 		node.next = null;
 		node.next = head;
@@ -53,13 +53,13 @@ public class LinkedList {
 
 	public void insertAt(int index, int data) {
 
-		Node node = new Node();
+		_Node node = new _Node();
 		node.data = data;
 		node.next = null;
 		if (index == 0) {
 			insertAtStart(data);
 		} else {
-			Node n = head;
+			_Node n = head;
 			for (int i = 0; i < index - 1; i++) {
 				n = n.next;
 			}
@@ -73,11 +73,11 @@ public class LinkedList {
 		if (index == 0) {
 			head = head.next;
 		} else {
-			Node n = head;
+			_Node n = head;
 			for (int i = 0; i < index - 1; i++) {
 				n = n.next;
 			}
-			Node n1 = n.next;
+			_Node n1 = n.next;
 			n.next = n1.next;
 			n1 = null;
 		}
@@ -93,9 +93,9 @@ public class LinkedList {
 	}
 
 	public void clear() {
-		Node n = head;
+		_Node n = head;
 		while (n != null) {
-			Node temp = n.next;
+			_Node temp = n.next;
 			n.next = null;
 			n.data = 0;
 			n = temp;
@@ -108,5 +108,5 @@ public class LinkedList {
 
 class Node {
 	int data;
-	Node next;
+	_Node next;
 }
